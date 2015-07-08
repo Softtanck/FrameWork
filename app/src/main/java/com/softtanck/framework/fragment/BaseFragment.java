@@ -19,22 +19,22 @@ import com.softtanck.framework.utils.VolleyUtils;
 
 /**
  * @author Tanck
- * @Description ËùÓĞËéÆ¬µÄ»ùÀà
+ * @Description æ‰€æœ‰ç¢ç‰‡çš„åŸºç±»
  * @date Jan 16, 2015 8:52:21 PM
  */
 public abstract class BaseFragment extends Fragment implements View.OnClickListener {
 
-    /** ËéÆ¬»ùÀà*/
+    /** ç¢ç‰‡åŸºç±»*/
     private BaseActivity holder;
-    /** Í¼Æ¬¼ÓÔØ*/
+    /** å›¾ç‰‡åŠ è½½*/
     private ImageLoader imageLoader;
-    /** ÉÏÏÂÎÄ*/
+    /** ä¸Šä¸‹æ–‡*/
     private Context context;
-    /** ÇëÇó¶ÓÁĞ*/
+    /** è¯·æ±‚é˜Ÿåˆ—*/
     private RequestQueue requestQueue;
-    /** Volley¹¤¾ßÀà*/
+    /** Volleyå·¥å…·ç±»*/
     private VolleyUtils volleyUtils;
-    /** gson¹¤¾ß*/
+    /** gsonå·¥å…·*/
     private Gson gson;
 
     @Override
@@ -65,12 +65,12 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     }
 
     /**
-     * »ñÈ¡FragmentÌî³ä²¼¾Ö
+     * è·å–Fragmentå¡«å……å¸ƒå±€
      */
     protected abstract int getLayoutView();
 
     /**
-     * µ±Fragment±»¸½¼ÓµÄÊ±ºò
+     * å½“Fragmentè¢«é™„åŠ çš„æ—¶å€™
      */
     protected abstract void onAttaching();
 

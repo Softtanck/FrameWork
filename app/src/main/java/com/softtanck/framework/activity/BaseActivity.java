@@ -22,25 +22,25 @@ import com.softtanck.framework.view.TitleView;
 
 /**
  * @author Tanck
- * @Description TODO ËùÓĞActivityµÄ»ùÀà
+ * @Description TODO æ‰€æœ‰Activityçš„åŸºç±»
  * @date Jan 16, 2015 5:20:57 PM
  */
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
-    /** ±êÌâ*/
+    /** æ ‡é¢˜*/
     public TitleView titleView;
-    /** ÊÓÍ¼Ìî³äÆ÷*/
+    /** è§†å›¾å¡«å……å™¨*/
     public LayoutInflater inflater;
-    /** Fragment¹ÜÀí*/
+    /** Fragmentç®¡ç†*/
     public FragmentManager fragmentManager;
-    /** jsonÊı¾İ°ïÖúÀà*/
+    /** jsonæ•°æ®å¸®åŠ©ç±»*/
     public Gson gson;
-    /** VolleyÇëÇó¶ÓÁĞ*/
+    /** Volleyè¯·æ±‚é˜Ÿåˆ—*/
     public RequestQueue requestQueue;
-    /** Í¼Æ¬¼ÓÔØ*/
+    /** å›¾ç‰‡åŠ è½½*/
     public ImageLoader imageLoader;
-    /** ÉÏÏÂÎÄ*/
+    /** ä¸Šä¸‹æ–‡*/
     public Context context;
-    /** ÍøÂç¹¤¾ß*/
+    /** ç½‘ç»œå·¥å…·*/
     public VolleyUtils volleyUtils;
 
 
@@ -79,7 +79,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
     /**
-     * Èç¹ûĞèÒªµã»÷¾ÍÖ±½ÓÖØĞ´¸Ã·½·¨
+     * å¦‚æœéœ€è¦ç‚¹å‡»å°±ç›´æ¥é‡å†™è¯¥æ–¹æ³•
      * @param v
      */
     @Override
@@ -88,7 +88,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
     /**
-     * ´òÓ¡Ò»¸öToast
+     * æ‰“å°ä¸€ä¸ªToast
      *
      * @param textId
      */
@@ -97,7 +97,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     }
 
     /**
-     * ´òÓ¡Ò»¸öToast
+     * æ‰“å°ä¸€ä¸ªToast
      *
      * @param text
      */
@@ -111,12 +111,12 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         mToast.show();
     }
     /**
-     * ÉèÖÃ²¼¾ÖÕ¹Ê¾µÄView
+     * è®¾ç½®å¸ƒå±€å±•ç¤ºçš„View
      */
     protected abstract int getViewId();
 
     /**
-     * ³õÊ¼»¯²¼¾Ö¿Ø¼ş
+     * åˆå§‹åŒ–å¸ƒå±€æ§ä»¶
      */
     protected abstract void onActivityCreate();
 

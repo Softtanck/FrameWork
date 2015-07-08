@@ -7,24 +7,24 @@ public class ConValue {
 
     public interface App {
         /**
-         * 使用Universial-ImageLoad路径
+         * 浣跨敤Universial-ImageLoad璺緞
          */
         String UNIVERSAL_IMAGE_PATH = "framework/universal_image";
 
     }
 
     /**
-     * 方法标记
+     * 鏂规硶鏍囪
      */
     public static final String FUNCTION_TYPE_TAG = "type";
 
     /**
-     * 屏幕宽度:px
+     * 灞忓箷瀹藉害:px
      */
     public static int ScreenWidth;
 
     /**
-     * 屏幕高度
+     * 灞忓箷楂樺害
      */
     public static int ScreenHeight;
 }

@@ -34,32 +34,32 @@ public class ImageLoaderConfig {
     }
 
     /**
-     * ³õÊ¼»¯Êı¾İ
+     * åˆå§‹åŒ–æ•°æ®
      *
      * @param context
      */
     private void init(Context context) {
-        cacheSize = (int) (Runtime.getRuntime().maxMemory() / 8);//ÄÚ´æ»º´æ´óĞ¡
-        cacheDir = StorageUtils.getOwnCacheDirectory(context, ConValue.App.UNIVERSAL_IMAGE_PATH);//±¾µØ»º´æÄ¿Â¼
+        cacheSize = (int) (Runtime.getRuntime().maxMemory() / 8);//å†…å­˜ç¼“å­˜å¤§å°
+        cacheDir = StorageUtils.getOwnCacheDirectory(context, ConValue.App.UNIVERSAL_IMAGE_PATH);//æœ¬åœ°ç¼“å­˜ç›®å½•
         config = new ImageLoaderConfiguration.Builder(context)
-                // max width, max height£¬¼´±£´æµÄÃ¿¸ö»º´æÎÄ¼şµÄ×î´ó³¤¿í
+                // max width, max heightï¼Œå³ä¿å­˜çš„æ¯ä¸ªç¼“å­˜æ–‡ä»¶çš„æœ€å¤§é•¿å®½
                 .memoryCacheExtraOptions(480, 800)
-                        // Ïß³Ì³ØÄÚ¼ÓÔØµÄÊıÁ¿
+                        // çº¿ç¨‹æ± å†…åŠ è½½çš„æ•°é‡
                 .threadPoolSize(3)
                 .threadPriority(Thread.NORM_PRIORITY - 2)
                 .denyCacheImageMultipleSizesInMemory()
                         // You can pass your own memory cache
-                        // implementation/Äã¿ÉÒÔÍ¨¹ı×Ô¼ºµÄÄÚ´æ»º´æÊµÏÖ
+                        // implementation/ä½ å¯ä»¥é€šè¿‡è‡ªå·±çš„å†…å­˜ç¼“å­˜å®ç°
                 .memoryCache(new UsingFreqLimitedMemoryCache(1 * 1024 * 1024))
-                        //±¾µØ´æ·ÅµÄ´óĞ¡
+                        //æœ¬åœ°å­˜æ”¾çš„å¤§å°
                 .memoryCacheSize(cacheSize).diskCacheSize(50 * 1024 * 1024)
-                        // ½«±£´æµÄÊ±ºòµÄURIÃû³ÆÓÃMD5 ¼ÓÃÜ
+                        // å°†ä¿å­˜çš„æ—¶å€™çš„URIåç§°ç”¨MD5 åŠ å¯†
                 .diskCacheFileNameGenerator(new Md5FileNameGenerator())
 
                 .tasksProcessingOrder(QueueProcessingType.LIFO)
-                        // »º´æµÄÎÄ¼şÊıÁ¿
+                        // ç¼“å­˜çš„æ–‡ä»¶æ•°é‡
                 .discCacheFileCount(100)
-                        // ×Ô¶¨Òå»º´æÂ·¾¶
+                        // è‡ªå®šä¹‰ç¼“å­˜è·¯å¾„
                 .discCache(new UnlimitedDiskCache(cacheDir))
 
                 .defaultDisplayImageOptions(DisplayImageOptions.createSimple())
@@ -69,14 +69,14 @@ public class ImageLoaderConfig {
                         // s),
                         // readTimeout
                         // (30
-                        // s)³¬Ê±Ê±¼ä
+                        // s)è¶…æ—¶æ—¶é—´
                 .writeDebugLogs() // Remove for release app
-                .build();// ¿ªÊ¼¹¹½¨
+                .build();// å¼€å§‹æ„å»º
     }
 
 
     /**
-     * »ñÈ¡ImageLoaderÕûÌåÅäÖÃ
+     * è·å–ImageLoaderæ•´ä½“é…ç½®
      *
      * @return
      */
@@ -85,38 +85,38 @@ public class ImageLoaderConfig {
     }
 
     /**
-     * ÉèÖÃÏÔÊ¾¼ÓÔØÍ¼±êµÄ·½Ê½
+     * è®¾ç½®æ˜¾ç¤ºåŠ è½½å›¾æ ‡çš„æ–¹å¼
      *
      * @return
      */
     public DisplayImageOptions setImageLoaderByIcon() {
         DisplayImageOptions options = new DisplayImageOptions.Builder().
-                showImageOnLoading(null) // ¼ÓÔØÖĞµÄ
+                showImageOnLoading(null) // åŠ è½½ä¸­çš„
                 .showImageForEmptyUri(null)
-                .showImageOnFail(null)//¼ÓÔØÊ§°ÜµÄ
+                .showImageOnFail(null)//åŠ è½½å¤±è´¥çš„
                 .cacheInMemory(true)
                 .cacheOnDisk(true)
                 .considerExifParams(true)
-                .displayer(new FadeInBitmapDisplayer(100))//ÉèÖÃÍ¼Æ¬½¥ÏÔµÄÊ±¼ä
+                .displayer(new FadeInBitmapDisplayer(100))//è®¾ç½®å›¾ç‰‡æ¸æ˜¾çš„æ—¶é—´
                 .bitmapConfig(Bitmap.Config.ARGB_8888)
                 .build();
         return options;
     }
 
     /**
-     * ÉèÖÃÏÔÊ¾¼ÓÔØÍ¼Æ¬µÄ·½Ê½:ÔİÊ±ÏÈ¿¼ÂÇÓÃ565
+     * è®¾ç½®æ˜¾ç¤ºåŠ è½½å›¾ç‰‡çš„æ–¹å¼:æš‚æ—¶å…ˆè€ƒè™‘ç”¨565
      *
      * @return
      */
     public DisplayImageOptions setImageLoaderByNormal() {
         DisplayImageOptions options = new DisplayImageOptions.Builder().
-                showImageOnLoading(null) // ¼ÓÔØÖĞµÄ
+                showImageOnLoading(null) // åŠ è½½ä¸­çš„
                 .showImageForEmptyUri(null)
-                .showImageOnFail(null)//¼ÓÔØÊ§°ÜµÄ
+                .showImageOnFail(null)//åŠ è½½å¤±è´¥çš„
                 .cacheInMemory(true)
                 .cacheOnDisk(true)
                 .considerExifParams(true)
-                .displayer(new FadeInBitmapDisplayer(100))//ÉèÖÃÍ¼Æ¬½¥ÏÔµÄÊ±¼ä
+                .displayer(new FadeInBitmapDisplayer(100))//è®¾ç½®å›¾ç‰‡æ¸æ˜¾çš„æ—¶é—´
                 .bitmapConfig(Bitmap.Config.RGB_565)
                 .build();
         return options;
