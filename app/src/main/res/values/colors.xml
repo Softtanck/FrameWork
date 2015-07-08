@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+
+    <color name="xwhite">#FFFFFFFF</color>
+
+    <color name="black">#000000</color>
+
+    <color name="xblack">#FF000000</color>
+
+    <!-- volley image load color -->
+    <color name="image_load">#DDDDDD</color>
+    <color name="image_error">#666666</color>
+    <!--  -->
+</resources>
