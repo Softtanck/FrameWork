@@ -9,21 +9,31 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.softtanck.framework.R;
+import com.softtanck.framework.ui.PullToRefreshRecycleView;
 import com.softtanck.framework.utils.ScreenUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
+    private PullToRefreshRecycleView recyclerView;
+
+    private List<String> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        list =new ArrayList<>();
+        for (int i =0;i<100;i++){
+            list.add("我们都是开发者:"+i);
+        }
         ScreenUtils.setChenjin(findViewById(R.id.rl), MainActivity.this);
-        recyclerView = (RecyclerView) findViewById(R.id.rlv);
-        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-        recyclerView.setHasFixedSize(true);
+        recyclerView = (PullToRefreshRecycleView) findViewById(R.id.rlv);
         recyclerView.setAdapter(new MyAdapter());
     }
 
@@ -36,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(MyViewHoder myViewHoder, int i) {
-            myViewHoder.textView.setText("我们都是开发者");
+            myViewHoder.textView.setText(list.get(i));
         }
 
         @Override
         public int getItemCount() {
-            return 100;
+            return list.size();
         }
     }
 

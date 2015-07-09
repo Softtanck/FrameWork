@@ -2,28 +2,28 @@ package com.softtanck.framework.net;
 
 
 /**
- * 网络响应接口
+ * 缃戠粶鍝嶅簲鎺ュ彛
  *
  * @param <T>
  */
 public interface NetWorkRespListener<T> {
     /**
-     * 网络响应成功
+     * 缃戠粶鍝嶅簲鎴愬姛
      *
      * @param response
      */
     public void onSuccessResponse(T response);
 
     /**
-     * 网络响应成功
+     * 缃戠粶鍝嶅簲鎴愬姛
      *
      * @param response
-     * @param type     响应类型
+     * @param type     鍝嶅簲绫诲瀷
      */
     public void onSuccessResponse(T response, String type);
 
     /**
-     * 网络响应失败
+     * 缃戠粶鍝嶅簲澶辫触
      *
      * @param error
      */
