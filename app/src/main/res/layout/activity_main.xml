@@ -5,17 +5,16 @@
     android:layout_height="match_parent"
     android:background="#00AAE9">
 
-    <com.softtanck.framework.view.TitleView
+    <include
         android:id="@+id/comm_titleView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        app:mytitle="@string/app_name" />
+        layout="@layout/view_common_title" />
 
-    <com.softtanck.framework.ui.PullToRefreshRecycleView
-        android:id="@+id/rlv"
+    <FrameLayout
+        android:id="@+id/fl_home_content"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@id/comm_titleView"
         android:background="@color/xwhite" />
+
 
 </RelativeLayout>
