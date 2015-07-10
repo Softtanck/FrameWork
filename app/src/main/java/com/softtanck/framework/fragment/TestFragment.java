@@ -38,7 +38,7 @@ public class TestFragment extends BaseFragment {
 
     @Override
     protected int getLayoutView() {
-        return 0;
+        return R.layout.fragment_test;
     }
 
     @Override
