@@ -4,7 +4,11 @@ import android.app.Application;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.easemob.chat.EMChat;
+import com.easemob.chat.EMChatManager;
+import com.easemob.chat.EMChatOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.softtanck.framework.utils.LogUtils;
 import com.softtanck.framework.utils.ScreenUtils;
 import com.softtanck.framework.utils.VolleyUtils;
 
@@ -43,6 +47,7 @@ public class App extends Application {
      * 初始化数据
      */
     private void init() {
+        initChat();
         requestQueue = Volley.newRequestQueue(instance);//Volley请求队列
         volleyUtils = volleyUtils.init(requestQueue, this);//Volley工具类
         imageLoader = ImageLoader.getInstance();//图片加载器
@@ -50,6 +55,27 @@ public class App extends Application {
         imageLoader.init(imageLoaderConfig.getConfig());//初始化ImageLoader
         CrashHandler.init(this);//异常博获器
     }
+
+    /**
+     * 初始化环信
+     */
+    private void initChat() {
+        // 初始化环信SDK,一定要先调用init()
+        LogUtils.d("initialize EMChat SDK");
+        EMChat.getInstance().init(instance);
+        // debugmode设为true后，就能看到sdk打印的log了
+        EMChat.getInstance().setDebugMode(true);
+
+        // 获取到EMChatOptions对象
+        EMChatOptions options = EMChatManager.getInstance().getChatOptions();
+        // 默认添加好友时，是不需要验证的，改成需要验证
+        options.setAcceptInvitationAlways(false);
+
+        //设置一个connectionlistener监听账户重复登陆
+//        EMChatManager.getInstance().addConnectionListener(new MyConnectionListener());
+
+    }
+
 
 
     @Override

@@ -27,27 +27,27 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     /**
      * 碎片基类
      */
-    private BaseActivity holder;
+    public BaseActivity holder;
     /**
      * 图片加载
      */
-    private ImageLoader imageLoader;
+    public ImageLoader imageLoader;
     /**
      * 上下文
      */
-    private Context context;
+    public Context context;
     /**
      * 请求队列
      */
-    private RequestQueue requestQueue;
+    public RequestQueue requestQueue;
     /**
      * Volley工具类
      */
-    private VolleyUtils volleyUtils;
+    public VolleyUtils volleyUtils;
     /**
      * gson工具
      */
-    private Gson gson;
+    public Gson gson;
 
     @Override
     public void onAttach(Activity activity) {
@@ -81,7 +81,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      *
      * @param hidden
      */
-    public abstract void onHiddenChanged(boolean hidden);
+//    public abstract void onHiddenChanged(boolean hidden);
 
     /**
      * 获取Fragment填充布局
