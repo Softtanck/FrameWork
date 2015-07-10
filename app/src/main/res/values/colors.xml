@@ -12,4 +12,8 @@
     <color name="image_load">#DDDDDD</color>
     <color name="image_error">#666666</color>
     <!--  -->
+
+
+    <!-- 聊天-->
+    <color name="btn_gray_normal">#c0c0c0</color>
 </resources>
