@@ -37,7 +37,7 @@ public class ChatActivity extends BaseActivity {
     @Override
     protected void onActivityCreate() {
         listView = (ListView) findViewById(R.id.list);
-        adapter = new ChatAdapter(this, "Tanck", 1);
+        adapter = new ChatAdapter(this, "cqm", 1);
         listView.setAdapter(adapter);
 
         initChat();
@@ -63,6 +63,7 @@ public class ChatActivity extends BaseActivity {
             String msgid = intent.getStringExtra("msgid");
             // 收到这个广播的时候，message已经在db和内存里了，可以通过id获取mesage对象
             EMMessage message = EMChatManager.getInstance().getMessage(msgid);
+            showToast("收到了消息:---->消息类型:" + message.getChatType() + "----消息内容:" + (TextMessageBody) message.getBody());
             LogUtils.d("收到了消息:---->消息类型:" + message.getChatType() + "----消息内容:" + (TextMessageBody) message.getBody());
             adapter.notifyDataSetChanged();
             abortBroadcast();
@@ -72,21 +73,50 @@ public class ChatActivity extends BaseActivity {
     public void test(View view) {
 
         LogUtils.d("test");
-        EMChatManager.getInstance().login("cqm", "422013", new EMCallBack() {
+        EMChatManager.getInstance().login("tanck", "422013", new EMCallBack() {
             @Override
             public void onSuccess() {
+                showToast("登陆成功");
                 LogUtils.d("登陆成功");
-                TextMessageBody txtBody = new TextMessageBody("hello world");
+                //获取到与聊天人的会话对象。参数username为聊天人的userid或者groupid，后文中的username皆是如此
                 EMConversation conversation = EMChatManager.getInstance().getConversation("cqm");
+                //创建一条文本消息
                 EMMessage message = EMMessage.createSendMessage(EMMessage.Type.TXT);
-                // 设置消息body
+                //设置消息body
+                TextMessageBody txtBody = new TextMessageBody("hello world");
                 message.addBody(txtBody);
-                // 设置要发给谁,用户username或者群聊groupid
+                //设置接收人
                 message.setReceipt("cqm");
-                // 把messgage加到conversation中
+                //把消息加入到此会话对象中
                 conversation.addMessage(message);
-                LogUtils.d("name:"+conversation.getUserName());
-                LogUtils.d("发送成功");
+                //发送消息
+                EMChatManager.getInstance().sendMessage(message, new EMCallBack() {
+                    @Override
+                    public void onSuccess() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showToast("发送成功");
+                            }
+                        });
+
+                    }
+
+                    @Override
+                    public void onError(int i, final String s) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                showToast("失败:"+s);
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onProgress(int i, String s) {
+
+                    }
+                });
             }
 
             @Override

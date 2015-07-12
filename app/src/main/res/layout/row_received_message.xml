@@ -24,8 +24,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="@dimen/margin_chat_activity"
-            android:background="@mipmap/tmp_head_1"
-            android:scaleType="fitXY" />
+            android:src="@mipmap/tmp_head_1"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/tv_chatcontent"
