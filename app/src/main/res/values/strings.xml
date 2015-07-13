@@ -6,4 +6,6 @@
 
 
     <string name="app_runtime_exception">程序遇到一个异常,即将退出</string>
+
+    <string name="chat_message_fail">消息发送失败</string>
 </resources>

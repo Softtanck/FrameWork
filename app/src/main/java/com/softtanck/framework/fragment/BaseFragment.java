@@ -24,18 +24,30 @@ import com.softtanck.framework.utils.VolleyUtils;
  */
 public abstract class BaseFragment extends Fragment implements View.OnClickListener {
 
-    /** 碎片基类*/
-    private BaseActivity holder;
-    /** 图片加载*/
-    private ImageLoader imageLoader;
-    /** 上下文*/
-    private Context context;
-    /** 请求队列*/
-    private RequestQueue requestQueue;
-    /** Volley工具类*/
-    private VolleyUtils volleyUtils;
-    /** gson工具*/
-    private Gson gson;
+    /**
+     * 碎片基类
+     */
+    public BaseActivity holder;
+    /**
+     * 图片加载
+     */
+    public ImageLoader imageLoader;
+    /**
+     * 上下文
+     */
+    public Context context;
+    /**
+     * 请求队列
+     */
+    public RequestQueue requestQueue;
+    /**
+     * Volley工具类
+     */
+    public VolleyUtils volleyUtils;
+    /**
+     * gson工具
+     */
+    public Gson gson;
 
     @Override
     public void onAttach(Activity activity) {
@@ -65,6 +77,13 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     }
 
     /**
+     * 当视图被改变
+     *
+     * @param hidden
+     */
+//    public abstract void onHiddenChanged(boolean hidden);
+
+    /**
      * 获取Fragment填充布局
      */
     protected abstract int getLayoutView();
@@ -74,4 +93,21 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      */
     protected abstract void onAttaching();
 
+    /**
+     * 当View被创建完毕的时候
+     *
+     * @param view
+     * @param savedInstanceState
+     */
+    public abstract void onViewCreated(View view, Bundle savedInstanceState);
+
+    /**
+     * 需要点击事件就直接重写onClick
+     *
+     * @param v
+     */
+    @Override
+    public void onClick(View v) {
+
+    }
 }
