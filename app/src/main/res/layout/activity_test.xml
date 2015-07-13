@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#00AAE9">
+
+    <com.softtanck.framework.view.TitleView
+        android:id="@+id/comm_titleView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:mytitle="Dialog" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点我测试进度条"
+        android:onClick="animation"
+        android:id="@+id/bt"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="点我测试对话框"
+        android:onClick="animation2"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="点我测试百分比进度条"
+        android:onClick="animation3"
+        android:layout_centerHorizontal="true"
+        />
+</LinearLayout>

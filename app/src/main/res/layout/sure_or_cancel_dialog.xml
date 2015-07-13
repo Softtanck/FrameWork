@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:id="@+id/dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="center_vertical"
+        android:background="@color/material_blue_grey_800"
+       >
+        <ImageView
+            android:id="@+id/titleIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/titleIcon"
+            android:text="标题在这里"
+            android:textColor="#ff5e86cf"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dialogDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleIcon"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:text="内容在这里，说点什么呢，都可以的。点击确定或者取消就可以..." />
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:onClick="cancel"
+            android:background="@drawable/btn_bg_selector"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"
+            android:layout_below="@id/dialogDetail"/>
+
+        <Button
+            android:id="@+id/sureBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确认"
+            android:onClick="sure"
+            android:background="@drawable/btn_bg_selector"
+            android:layout_below="@id/dialogDetail"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/cancelBtn"/>
+
+
+    </RelativeLayout>
+</LinearLayout>
+
