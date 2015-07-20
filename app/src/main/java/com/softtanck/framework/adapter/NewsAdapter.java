@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.softtanck.framework.R;
+import com.softtanck.framework.utils.LogUtils;
 
 import java.util.List;
 
@@ -62,7 +63,20 @@ public class NewsAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        return null;
+        if (0 == position) {
+            LogUtils.d("test");
+            holder.date.setText("2015-07-20");
+            holder.fl.setVisibility(View.VISIBLE);
+        } else {
+            holder.fl.setVisibility(View.GONE);
+        }
+
+        holder.iv.setImageResource(R.mipmap.ic_launcher);
+        holder.title.setText(mList.get(position));
+        holder.descraption.setText("我是描述");
+        holder.button.setText("Lenovo新闻");
+
+        return convertView;
     }
 
     private class ViewHolder {

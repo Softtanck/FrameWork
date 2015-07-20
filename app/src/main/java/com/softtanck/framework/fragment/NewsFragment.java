@@ -5,6 +5,10 @@ import android.view.View;
 import android.widget.ListView;
 
 import com.softtanck.framework.R;
+import com.softtanck.framework.adapter.NewsAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : Tanck
@@ -14,6 +18,8 @@ import com.softtanck.framework.R;
 public class NewsFragment extends BaseFragment {
 
     private ListView listView;
+    private List<String> list;
+    private NewsAdapter adapter;
 
     @Override
     protected int getLayoutView() {
@@ -33,7 +39,13 @@ public class NewsFragment extends BaseFragment {
     }
 
     private void initView(View view) {
+        list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add("我是第:" + i + "个新闻");
+        }
+        adapter = new NewsAdapter(context, list);
         listView = (ListView) view.findViewById(R.id.lv_news_list);
+        listView.setAdapter(adapter);
     }
 
     private void initTitle() {
