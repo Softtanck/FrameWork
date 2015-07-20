@@ -2,9 +2,7 @@ package com.softtanck.framework.activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +15,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.softtanck.framework.ActivityContainer;
 import com.softtanck.framework.App;
 import com.softtanck.framework.R;
+import com.softtanck.framework.slidingmenu.app.SlidingFragmentActivity;
 import com.softtanck.framework.utils.VolleyUtils;
 import com.softtanck.framework.view.TitleView;
 
@@ -25,7 +24,7 @@ import com.softtanck.framework.view.TitleView;
  * @Description TODO 所有Activity的基类
  * @date Jan 16, 2015 5:20:57 PM
  */
-public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
+public abstract class BaseActivity extends SlidingFragmentActivity implements View.OnClickListener{
     /** 标题*/
     public TitleView titleView;
     /** 视图填充器*/
@@ -45,7 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getViewId());
 
