@@ -16,6 +16,7 @@ import com.easemob.chat.TextMessageBody;
 import com.easemob.exceptions.EaseMobException;
 import com.softtanck.framework.ChatAdapter;
 import com.softtanck.framework.R;
+import com.softtanck.framework.utils.DialogUtils;
 import com.softtanck.framework.utils.LogUtils;
 
 /**
@@ -71,6 +72,8 @@ public class ChatActivity extends BaseActivity {
     }
 
     public void test(View view) {
+
+        DialogUtils.init(ChatActivity.this).createDownLoadProgressBar(5);
 
         LogUtils.d("test");
         EMChatManager.getInstance().login("tanck", "422013", new EMCallBack() {
