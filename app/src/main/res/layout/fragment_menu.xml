@@ -1,10 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#353535"
+    android:orientation="vertical">
 
-    <TextView
-        android:text="菜单"
+
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.softtanck.framework.imageview.RoundedCornerImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/head" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="UserName"
+            android:textColor="@color/xwhite" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp">
+
+        <ImageView
+            android:id="@+id/iv_my_task"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:src="@mipmap/menu1" />
+
+        <ImageView
+            android:id="@+id/iv_study_history"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/menu2" />
+
+        <ImageView
+            android:id="@+id/iv_news"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/menu4" />
+
+    </LinearLayout>
+
+
 </LinearLayout>
