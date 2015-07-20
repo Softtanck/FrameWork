@@ -63,7 +63,6 @@ public class NewsAdapter extends BaseAdapter {
         }
 
         if (0 == position) {
-            LogUtils.d("test");
             holder.date.setText("2015-07-20");
             holder.fl.setVisibility(View.VISIBLE);
         } else {
