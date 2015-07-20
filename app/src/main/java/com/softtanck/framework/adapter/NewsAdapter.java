@@ -51,7 +51,6 @@ public class NewsAdapter extends BaseAdapter {
         if (null == convertView) {
             holder = new ViewHolder();
             convertView = View.inflate(context, R.layout.new_list_item, null);
-
             holder.fl = (FrameLayout) convertView.findViewById(R.id.fl_news_date);
             holder.date = (TextView) convertView.findViewById(R.id.tv_news_date_txt);
             holder.iv = (ImageView) convertView.findViewById(R.id.iv_news_head);
