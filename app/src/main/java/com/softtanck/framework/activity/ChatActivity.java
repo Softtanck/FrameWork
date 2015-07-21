@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.AsyncTask;
 import android.view.View;
 import android.widget.ListView;
 
@@ -13,8 +12,7 @@ import com.easemob.chat.EMChatManager;
 import com.easemob.chat.EMConversation;
 import com.easemob.chat.EMMessage;
 import com.easemob.chat.TextMessageBody;
-import com.easemob.exceptions.EaseMobException;
-import com.softtanck.framework.ChatAdapter;
+import com.softtanck.framework.adapter.ChatAdapter;
 import com.softtanck.framework.R;
 import com.softtanck.framework.utils.DialogUtils;
 import com.softtanck.framework.utils.LogUtils;

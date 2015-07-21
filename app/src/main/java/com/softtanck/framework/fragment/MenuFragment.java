@@ -56,7 +56,7 @@ public class MenuFragment extends BaseFragment {
                 changeFragment(R.id.fl_home_content, new NewsFragment());
                 break;
             case R.id.iv_study_history: // 学习历史
-
+                changeFragment(R.id.fl_home_content, new LearnRecordFragment());
                 break;
         }
     }

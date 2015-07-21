@@ -1,4 +1,4 @@
-package com.softtanck.framework;
+package com.softtanck.framework.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,6 +18,7 @@ import com.easemob.chat.EMConversation;
 import com.easemob.chat.EMMessage;
 import com.easemob.chat.TextMessageBody;
 import com.easemob.util.DateUtils;
+import com.softtanck.framework.R;
 import com.softtanck.framework.activity.BaseActivity;
 import com.softtanck.framework.utils.SmileUtils;
 
