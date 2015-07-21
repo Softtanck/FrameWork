@@ -6,6 +6,7 @@ import com.softtanck.framework.ConValue;
 import com.softtanck.framework.R;
 import com.softtanck.framework.fragment.ContentFragment;
 import com.softtanck.framework.fragment.MenuFragment;
+import com.softtanck.framework.fragment.MyTaskFragment;
 import com.softtanck.framework.slidingmenu.SlidingMenu;
 import com.softtanck.framework.utils.ScreenUtils;
 
@@ -32,7 +33,7 @@ public class MainActivity extends BaseActivity {
         MenuFragment menuFragment = new MenuFragment();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fl_home_menu, menuFragment);
-        fragmentTransaction.replace(R.id.fl_home_content, new ContentFragment());
+        fragmentTransaction.replace(R.id.fl_home_content, new MyTaskFragment());
         fragmentTransaction.commit();
 
         sm = getSlidingMenu();
