@@ -21,14 +21,11 @@ public class MyTaskFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
-        initTitleView(view);
+        initTitleView();
     }
 
 
-    /**
-     * @param v
-     */
-    private void initTitleView(View v){
+    private void initTitleView(){
         holder.titleView.removeAllMenu();
         holder.titleView.setTitle("我的任务");
         holder.titleView.addLeftDrawableMenu(holder, R.mipmap.title_bar_menu_btn, 25, 25, new View.OnClickListener() {
@@ -40,7 +37,7 @@ public class MyTaskFragment extends BaseFragment {
         holder.titleView.addRightDrawableMenu(holder, R.mipmap.title_bar_filter_btn, 25, 25, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                changeFragment(R.id.fl_home_content,new MyTaskMenuDetailFragment());
             }
         });
     }
