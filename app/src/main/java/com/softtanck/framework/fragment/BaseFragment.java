@@ -116,7 +116,8 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         if (0 == id && null == fragment)
             throw new IllegalStateException("传递参数不能为空");
         FragmentTransaction transaction = holder.fragmentManager.beginTransaction();
-        transaction.addToBackStack(null);
-        transaction.add(id, fragment).commit();
+        transaction.replace(id, fragment).commit();
     }
+
+
 }
