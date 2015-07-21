@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.softtanck.framework.R;
+import com.softtanck.framework.utils.LogUtils;
 
 import java.util.List;
 
@@ -50,7 +51,6 @@ public class NewsAdapter extends BaseAdapter {
         if (null == convertView) {
             holder = new ViewHolder();
             convertView = View.inflate(context, R.layout.new_list_item, null);
-
             holder.fl = (FrameLayout) convertView.findViewById(R.id.fl_news_date);
             holder.date = (TextView) convertView.findViewById(R.id.tv_news_date_txt);
             holder.iv = (ImageView) convertView.findViewById(R.id.iv_news_head);
@@ -62,7 +62,19 @@ public class NewsAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        return null;
+        if (0 == position) {
+            holder.date.setText("2015-07-20");
+            holder.fl.setVisibility(View.VISIBLE);
+        } else {
+            holder.fl.setVisibility(View.GONE);
+        }
+
+        holder.iv.setImageResource(R.mipmap.ic_launcher);
+        holder.title.setText(mList.get(position));
+        holder.descraption.setText("我是描述");
+        holder.button.setText("Lenovo新闻");
+
+        return convertView;
     }
 
     private class ViewHolder {

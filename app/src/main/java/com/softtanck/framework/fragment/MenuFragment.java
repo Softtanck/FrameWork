@@ -54,7 +54,6 @@ public class MenuFragment extends BaseFragment {
                 break;
             case R.id.iv_news: // 新闻公告
                 changeFragment(R.id.fl_home_content, new NewsFragment());
-                MainActivity.sm.toggle();
                 break;
             case R.id.iv_study_history: // 学习历史
 
