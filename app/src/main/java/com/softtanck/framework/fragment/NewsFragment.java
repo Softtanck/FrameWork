@@ -1,5 +1,6 @@
 package com.softtanck.framework.fragment;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,16 +11,17 @@ import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.softtanck.framework.ConValue;
 import com.softtanck.framework.R;
 import com.softtanck.framework.activity.MainActivity;
+import com.softtanck.framework.activity.NewsDetailActivity;
 import com.softtanck.framework.adapter.NewsAdapter;
 import com.softtanck.framework.adapter.NewsPagerAdapter;
-import com.softtanck.framework.imageview.ScaleImageView;
+import com.softtanck.framework.utils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +31,7 @@ import java.util.List;
  * @Description : TODO
  * @date 7/20/2015
  */
-public class NewsFragment extends BaseFragment implements ViewPager.OnPageChangeListener {
+public class NewsFragment extends BaseFragment implements ViewPager.OnPageChangeListener, AdapterView.OnItemClickListener {
 
     private ListView listView;
     private List<String> list;
@@ -79,6 +81,7 @@ public class NewsFragment extends BaseFragment implements ViewPager.OnPageChange
         listView = (ListView) view.findViewById(R.id.lv_news_list);
         listView.addHeaderView(header);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(this);
     }
 
     private void intiViewPager() {
@@ -139,5 +142,13 @@ public class NewsFragment extends BaseFragment implements ViewPager.OnPageChange
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        LogUtils.d("postion:" + position);
+        Intent newsDetail = new Intent(context, NewsDetailActivity.class);
+        newsDetail.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(newsDetail);
     }
 }

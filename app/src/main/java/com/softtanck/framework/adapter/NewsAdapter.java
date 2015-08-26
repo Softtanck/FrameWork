@@ -1,15 +1,18 @@
 package com.softtanck.framework.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.softtanck.framework.R;
+import com.softtanck.framework.activity.NewsDetailActivity;
 import com.softtanck.framework.utils.LogUtils;
 
 import java.util.List;
@@ -56,7 +59,7 @@ public class NewsAdapter extends BaseAdapter {
             holder.iv = (ImageView) convertView.findViewById(R.id.iv_news_head);
             holder.title = (TextView) convertView.findViewById(R.id.tv_news_title);
             holder.descraption = (TextView) convertView.findViewById(R.id.tv_news_decraption);
-            holder.button = (Button) convertView.findViewById(R.id.bt_news_type);
+            holder.button = (TextView) convertView.findViewById(R.id.bt_news_type);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -73,7 +76,6 @@ public class NewsAdapter extends BaseAdapter {
         holder.title.setText(mList.get(position));
         holder.descraption.setText("我是描述");
         holder.button.setText("Lenovo新闻");
-
         return convertView;
     }
 
@@ -83,6 +85,6 @@ public class NewsAdapter extends BaseAdapter {
         ImageView iv;
         TextView title;
         TextView descraption;
-        Button button;
+        TextView button;
     }
 }

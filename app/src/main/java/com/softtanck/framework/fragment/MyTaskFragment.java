@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.softtanck.framework.R;
+import com.softtanck.framework.activity.MainActivity;
 
 public class MyTaskFragment extends BaseFragment {
 
@@ -31,7 +32,7 @@ public class MyTaskFragment extends BaseFragment {
         holder.titleView.addLeftDrawableMenu(holder, R.mipmap.title_bar_menu_btn, 25, 25, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.showMenu();
+                MainActivity.sm.toggle();
             }
         });
         holder.titleView.addRightDrawableMenu(holder, R.mipmap.title_bar_filter_btn, 25, 25, new View.OnClickListener() {

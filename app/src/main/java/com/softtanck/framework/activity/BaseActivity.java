@@ -3,6 +3,7 @@ package com.softtanck.framework.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +25,7 @@ import com.softtanck.framework.view.TitleView;
  * @Description TODO 所有Activity的基类
  * @date Jan 16, 2015 5:20:57 PM
  */
-public abstract class BaseActivity extends SlidingFragmentActivity implements View.OnClickListener{
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener{
     /** 标题*/
     public TitleView titleView;
     /** 视图填充器*/
